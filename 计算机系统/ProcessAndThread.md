@@ -137,7 +137,7 @@
         - 调用wait方法后将释放this的锁，并使调用synchronized-wait语句块的线程进入等待状态。
         - 当某个条件满足，其他线程调用this.notify方法唤醒等待的线程，等待的线程将重新获得this的锁。  
         > 
-         <img src=./Java-multithread-wait-notify.jpg">
+         <img src=../resources/Java-multithread-wait-notify.jpg">
 
     3. java.util.concurrent包提供了高级更方便的API来实现多线程
         - ReentrantLock和Condition配合可以替代synchronized与wait-notify的功能，Condition对象必须从
@@ -147,7 +147,7 @@
           例如一个论坛帖子，回复不频繁，可看作写入。浏览频繁，可看作读取。
         - Concurrent集合：线程安全的集合类。
         - ---
-         <img src="./java-threadsafe-BlockConllection.png">
+         <img src="../resources/Java-threadsafe-BlockConllection.png">
         - java.util.atomic 提供的原子操作可以简化多线程编程，实现了无锁的线程安全，
           可用来实现计数器，累加器。
 
