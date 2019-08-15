@@ -137,7 +137,7 @@
         - 调用wait方法后将释放this的锁，并使调用synchronized-wait语句块的线程进入等待状态。
         - 当某个条件满足，其他线程调用this.notify方法唤醒等待的线程，等待的线程将重新获得this的锁。  
         > 
-         <img src=../resources/Java-multithread-wait-notify.jpg">
+         <img src="../resources/Java-multithread-wait-notify.jpg">
 
     3. java.util.concurrent包提供了高级更方便的API来实现多线程
         - ReentrantLock和Condition配合可以替代synchronized与wait-notify的功能，Condition对象必须从
