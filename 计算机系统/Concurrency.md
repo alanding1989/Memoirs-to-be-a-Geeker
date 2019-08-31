@@ -259,6 +259,7 @@
 #### 7. 语言相关的特点
 
 - ##### Python
+
   - Python 由于**全局锁GIL**的存在，不能有效利用多核，因此对于计算密集型任务，必须使用多进程方式加速。
 
   - Python 的**单线程**异步编程模型称为协程，可以基于事件驱动模型编写并发程序。  
@@ -287,6 +288,7 @@
 
 
 - ##### Go：
+
   - Go 有两种并发形式：
     - 传统的基于共享内存的多线程并发。同 Java 和 C++ 在多线程共享数据时，通过锁访问。
 
@@ -312,30 +314,47 @@
 
 
 - ##### Java：
-  - **synchronized** 解决了多线程之间数据竞争的问题，没有解决多线程协调的问题。  
 
-  - **wait 和 notify** 方法解决线程间协调的问题。  
-    多线程的协调运行：当条件不满足时，线程进入等待状态。
+  - 线程的状态：
+    - New(新创建)： 这时线程**还没有运行**代码，有一些基础工作要做。
+
+    - Runnable(可运行)：  
+      一旦调用start()方法，线程才处于runnable状态。注意此时为**可运行**而不是**正在运行**。  
+      当线程数目多于CPU数目时，抢占式调度系统采用时间片机制来保证每个线程都能被执行。
+
+    - Blocked(被阻塞)： 
+
+    - Waiting(等待)：
+
+    - Timed waiting(计时等待)：
+
+    - Terminated(被终止)：
+
+  - **synchronized：**  解决了多线程之间数据竞争的问题，没有解决多线程协调(执行顺序)的问题。  
+
+  - **wait 和 notify：**  
+    这两个方法解决线程间协调(执行顺序)的问题。当条件不满足时，线程进入等待状态。
+
     - wait方法只能在synchronized语句块中调用。
 
-    - 假设this指向一个用来封装线程间共享的数据结构的类。
+    - 假设this指向一个用来封装线程间共享数据结构的类实例。调用wait方法后将**释放this的锁**，并使调
+      用synchronized-wait语句块的线程进入**等待状态**。
 
-    - 调用wait方法后将释放this的锁，并使调用synchronized-wait语句块的线程进入等待状态。
+    - 当某个条件满足，其他线程调用this.notify方法**唤醒等待的线程**，等待的线程将**重新获得this的锁**。  
 
-    - 当某个条件满足，其他线程调用this.notify方法唤醒等待的线程，等待的线程将重新获得this的锁。  
       <img src="../resources/Java-multithread-wait-notify.jpg">
 
-  - **java.util.concurrent**包提供了高级更方便的API来实现多线程。
+  - **java.util.concurrent：** 包提供了高级更方便的API来实现多线程。
 
-    - **ReentrantLock** 和 **Condition** 配合可以替代synchronized与wait-notify的功能，Condition对象必须从
+    - **ReentrantLock 和 Condition：** 配合可以替代synchronized与wait-notify的功能，Condition对象必须从
       ReentrantLock对象获取。
 
-    - **ReadWriteLock**： 只允许一个线程写入，允许多个线程同时读取。  
+    - **ReadWriteLock：**  只允许一个线程写入，允许多个线程同时读取。  
       适合读多写少的场景。同一个实例，有大量线程读取，仅有少数线程修改。  
       例如一个论坛帖子，回复不频繁，可看作写入。浏览频繁，可看作读取。
 
-    - **Concurrent** 集合：线程安全的集合类。
+    - **Concurrent 集合：**  线程安全的集合类。
       <img src="../resources/Java-threadsafe-BlockConllection.png">
 
-    - **java.util.atomic** 提供的原子操作可以简化多线程编程，实现了无锁的线程安全。  
+    - **java.util.atomic：**  提供的原子操作可以简化多线程编程，实现了无锁的线程安全。  
       可用来实现计数器，累加器。
