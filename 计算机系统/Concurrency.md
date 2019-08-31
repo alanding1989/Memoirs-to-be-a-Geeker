@@ -330,6 +330,10 @@
 
     - Terminated(被终止)：
 
+  - **volatile：**  解决了多个线程间数据可见性的问题。  
+    被标记为volatile的字段会禁止编译器指令重排并且在读取字段时强制CPU刷新本地内存缓冲使之与主内存状态同步。
+    注：该关键字在C++中含义与Java中不一样，C++中其没有使数据同步的功能。
+
   - **synchronized：**  解决了多线程之间数据竞争的问题，没有解决多线程协调(执行顺序)的问题。  
 
   - **wait 和 notify：**  
@@ -344,7 +348,7 @@
 
       <img src="../resources/Java-multithread-wait-notify.jpg">
 
-  - **java.util.concurrent：** 包提供了高级更方便的API来实现多线程。
+  - **java.util.concurrent：** 包提供了比synchronized-wait语句快更高级别的API来实现多线程同步和协调。
 
     - **ReentrantLock 和 Condition：** 配合可以替代synchronized与wait-notify的功能，Condition对象必须从
       ReentrantLock对象获取。
