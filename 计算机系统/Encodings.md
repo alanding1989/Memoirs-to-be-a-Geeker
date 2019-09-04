@@ -6,6 +6,7 @@
     - [Unicode:](#unicode)
     - [UTF-8:](#utf-8)
     - [各语言编码特点：](#各语言编码特点)
+    - [移位操作：](#移位操作)
 
 <!-- vim-markdown-toc -->
 
@@ -67,7 +68,8 @@
   - 依此类推。。
 
 - **作用**：  
-  - 能使计算机实现跨语言，跨平台的文本处理，并比Unicode更节省空间。  
+  - 能使计算机实现跨语言，跨平台的文本处理，并比Unicode更节省空间，经常用来
+    做传输编码。  
 
 ---
 
@@ -76,8 +78,11 @@
 - C：     默认ASCII编码，所以一个char类型在32位系统上占8bit，1个byte。  
 - C++：   兼容C，正常情况一个char类型占8位，也有宽wchar_t 和支持Unicode的char16和char32。  
 - Python：诞生比Unicode标准发布还早，所以最早的python只支持ASCII编码。  
-- Java：  Java平台无关，默认Unicode编码，一个char类型永远占16bit，2个byte。  
+- Java：  Java平台无关，默认Unicode编码，一个char类型永远占16bit，2个byte，String类型也是Unicode编码。  
 - Rust：  Rust平台无关，默认UTF-8编码，但一个char类型总是占32bit，4个byte。  
           要注意的是Rust里单个字符在String中占用的byte和单个字符存在占用的byte是不一样的。
           如下图：<img src="../resources/rust-char-and-String.png">
 
+##### 移位操作：
+移位能实现整数除以或乘以2的n次方的效果。
+比如 y << n，与y 的 n 次方相等。
