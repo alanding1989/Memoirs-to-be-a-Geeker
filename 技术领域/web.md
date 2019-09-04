@@ -39,7 +39,8 @@ Bootstrap框架
 
 - MVC框架，Java-Spring，Python-Django, flask, tornado
   - 替代了jsp作为view的作用
-  - 集成后端持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口
+  - 集成后端Model持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口
+  - 底层Controller还是基于Servlet
   - 集成其他后端组件
 
 - redis缓存
