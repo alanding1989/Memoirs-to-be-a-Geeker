@@ -41,7 +41,7 @@
 
 
 #### 后端技术体系：
-- Web服务器(Tomcat，Ningx)、
+- Web服务器(Tomcat，Nginx)、
 
 - 浏览器请求解析、响应生成底层原理
 
@@ -56,9 +56,9 @@
   - 监听器实现会话统计，实时状态
 
 - MVC框架，Java-Spring，Python-Django, flask, tornado
-  - 替代了jsp作为view的作用
-  - 集成后端Model持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口
-  - 底层Controller还是基于Servlet
+  - 替代了jsp作为view的作用，用于展现与用户交互的前端界面。
+  - 集成后端Model持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口，处理真正的业务逻辑。
+  - 底层Controller还是基于Servlet，分发前端各种请求到对应的业务逻辑进行处理。
 
   - 集成其他后端组件
 
