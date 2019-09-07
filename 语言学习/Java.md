@@ -56,10 +56,10 @@
   - 只能读取Object的引用。
   - Pair<?> 和 Pair 不同。
 
-- 使用类似<T extends Number> 定义时泛型类时：
+- 使用类似<T extends Number> 定义泛型类时：
   T 类型只能是 Number 的子类。
 
-- 使用类似<T super Number> 定义时泛型类时：
+- 使用类似<T super Number> 定义泛型类时：
   T 类型只能是 Number 的超类。
 
 
