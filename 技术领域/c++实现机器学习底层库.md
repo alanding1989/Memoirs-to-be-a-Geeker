@@ -23,5 +23,3 @@ CUDA的nvcc编译器做GPU加速, 用bazel做整个项目的build。
 
 caffe代码很容易些，或者说你可以把cafde代码看懂就可以了，eigen的话其实比
 较简单。主要看下gemm的实现就ok。
-
-参考https://www.zhihu.com/question/63500206

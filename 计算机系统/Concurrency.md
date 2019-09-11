@@ -344,7 +344,7 @@
   - **wait 和 notify：**  
     这两个方法解决线程间协调(执行顺序)的问题。当条件不满足时，线程进入等待状态。
 
-    - wait方法只能在synchronized语句块中调用。
+    - wait方法**只能**在synchronized语句块中调用。
 
     - 假设this指向一个用来封装线程间共享数据结构的类实例。调用wait方法后将**释放this的锁**，并使调
       用synchronized-wait语句块的线程进入**等待状态**。

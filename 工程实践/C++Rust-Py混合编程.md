@@ -3,6 +3,7 @@
 
 - [　混合编程](#混合编程)
   - [C/C++ 和 Python 混合编程](#cc-和-python-混合编程)
+  - [Rust 和 Python 混合编程](#rust-和-python-混合编程)
 
 <!-- vim-markdown-toc -->
 
@@ -31,3 +32,7 @@
 - swig  : 接口简单，无依赖，支持C++，配置稍麻烦，是tensorflow的封装方式。
 - boost.python: 只需要考虑C++端就行，需boost库，构建需要许多Cpp前置知识。
 - opencv: 不需要写module文件，只要在类和方法前标注，兼容性好。
+
+
+#### Rust 和 Python 混合编程
+参考书籍
