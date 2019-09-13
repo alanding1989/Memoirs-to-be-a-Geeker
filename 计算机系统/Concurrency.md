@@ -98,11 +98,11 @@
 
   - **Promise** 站在任务处理者的角度，将异步任务成功或失败的状态封装在 Promise 对象中，通过 then、catch 分
     别调用成功或失败的处理函数逻辑。  
-    **如**Javascript 里面的Promise，Java里的CompletableFuture，
+    **如**Javascript 里面的Promise，Java里的CompletableFuture，Python里面的asyncio.Future
 
   - **Future** 站在任务调用者的角度，检测任务是否完成，如果完成则直接获取结果，如果未完成则阻塞直到获取结
     果，或者编写回调函数避免阻塞，根据相应的完成状态执行回调函数。  
-    **如**Java里的Future，Python里面的asyncio.Future。
+    **如**Java里的util.concurrent.Future，Python里面的concurrent.Future。
 
   - 虽然有了 Promise 和 Future，但是代码依然有冗余，而且业务逻辑的语义在用 Promise 时会表义不清，为了改善
     异步编程体验，让码农可以用写同步代码的方式编写可异步执行的代码，**协程**这个古老的概念又被提出。
@@ -256,9 +256,22 @@
     个IO请求，并且没有线程切换开销。对于大多数IO密集型的应用程序，使用异步IO将大大提升系统的多任务处理能力。  
 
 - #### 并发模型：
-  - 传统利用锁基于共享内存
+  - 传统的基于共享内存，利用锁的同步机制
+    - C++，Java，Python，Rust，Go
 
   - 基于通信共享内存(Actor, CSP)
+    - Actor：Scala, Erlang
+      Actor以 actor 为中心，不关心通信的中间管道，关心消费方的应答，能接收多种类型数据，因此需借助模式匹配
+      根据不同类型进行消息或任务分发，适合分布式应用。
+
+    - CSP：Go(mpmc)，Rust(mpsc)
+      CSP以 channel 为中心，一个channel只能接收一种类型数据，不关心对方消息是否有应答，所以需多路监听，
+      适合主从模式并发。
+
+  - 只能用于IO密集型场景的协程
+    - JavaScript，Python，Lua
+
+  - 全能协程 Go
 
 
 ### 7. 语言相关的特点
