@@ -2,13 +2,13 @@
 <!-- vim-markdown-toc GFM -->
 
 - [我的码农学习笔记](#我的码农学习笔记)
-  - [一些整理好的学习资料大纲，内容有部分重合](#一些整理好的学习资料大纲内容有部分重合)
-  - [实用工具](#实用工具)
 - [技术书籍阅读方法论](#技术书籍阅读方法论)
   - [原则](#原则)
   - [为什么要阅读源代码？](#为什么要阅读源代码)
   - [在阅读源代码之前，先完成这些工作](#在阅读源代码之前先完成这些工作)
   - [阅读的节奏](#阅读的节奏)
+  - [一些整理好的学习资料大纲，内容有部分重合](#一些整理好的学习资料大纲内容有部分重合)
+  - [实用工具](#实用工具)
 
 <!-- vim-markdown-toc -->
 
@@ -21,34 +21,10 @@
   优秀工程师所具备的能力无外乎4种，将现实问题转换为计算机问题的数学能力，对于语言本身的工具链熟悉程
   度（最为简单），计算机体系知识的掌握能力，以及对所有经验进行形而上的能力。
 
-   一张**探索本质**的图片。
+  一张**探索本质**的图片。
 
    <img src="./resources/本质的探索.jpg">
 
-
-#### 一些整理好的学习资料大纲，内容有部分重合
-
-- **Web前端，后端**  
-  - **[CS-Notes较通用的部分](https://github.com/CyC2018/CS-Notes)**
-  - **[Awesome Growth：技能图谱](http://awesome-growth.phodal.com/)**
-  - **[JavaGuide学习+面试指南](https://github.com/Snailclimb/JavaGuide)**
-  - **[Advanced-Java进阶](https://github.com/doocs/advanced-java)**
-  - **[Go开发者路线图](https://github.com/Quorafind/golang-developer-roadmap-cn)**
-  - **[JavaScript全栈培训材料](https://github.com/ruanyf/jstraining)**
-  - **[猫的前端回忆录](https://github.com/windiest/Front-end-tutorial)**
-  - **[前端面试指南](https://github.com/yangshun/front-end-interview-handbook)**
-
-- **大数据**
-
-- **大后端-机器学习**
-
-- **Gui**
-
-
-#### 实用工具
-
-- **CheatSheet**  
-  - **[数据科学小抄](https://github.com/abhat222/Data-Science--Cheat-Sheet)**
 
 ---
 
@@ -76,8 +52,8 @@
 
 3. 解决以上的问题，能够更深刻地理解技术的内涵及其**应用的业务场景**，适不适合当下的时代发展以及某个领域大概
    的**技术趋势**。  
-   至于为什么要考虑这么多，这是由人类认识事物的本质规律决定的，无论做什么都需要，并不是做技术独有的要求，可
-   以参考麦肯锡咨询顾问的经典书籍《**金字塔原理**》及相关的管理学著作。
+   至于为什么要考虑这么多，这是由人类认识事物的**本质规律**决定的，无论做什么都需要，并不是做技术独有的要求，
+   可以参考麦肯锡咨询顾问的经典书籍《**金字塔原理**》及相关的管理学著作。
 
 4. 完成以上前置准备后，自己动手造一个轮子，边造边看相关理论知识，事半功倍，而且会对其有更**本质**的了解。
 
@@ -121,3 +97,27 @@
 3. 实践。在实践的时候要注意不用都去实践，最好看着书，敲下代码，把重点的内容敲一遍
    有个肌肉记忆就很不错了。到自己做过的项目中去把每个有涉及到原理的代码，研究
    一遍，就可以了。
+
+
+#### 一些整理好的学习资料大纲，内容有部分重合
+
+- **Web前端，后端**  
+  - **[CS-Notes较通用的部分](https://github.com/CyC2018/CS-Notes)**
+  - **[Awesome Growth：技能图谱](http://awesome-growth.phodal.com/)**
+  - **[JavaGuide学习+面试指南](https://github.com/Snailclimb/JavaGuide)**
+  - **[Advanced-Java进阶](https://github.com/doocs/advanced-java)**
+  - **[Go开发者路线图](https://github.com/Quorafind/golang-developer-roadmap-cn)**
+  - **[JavaScript全栈培训材料](https://github.com/ruanyf/jstraining)**
+  - **[猫的前端回忆录](https://github.com/windiest/Front-end-tutorial)**
+  - **[前端面试指南](https://github.com/yangshun/front-end-interview-handbook)**
+
+- **大数据**
+
+- **大后端-机器学习**
+
+- **Gui**
+
+
+#### 实用工具
+- [日常工具](./日常工具.md)
+
