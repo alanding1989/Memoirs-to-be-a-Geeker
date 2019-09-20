@@ -2,6 +2,7 @@
 <!-- vim-markdown-toc GFM -->
 
 - [分析任何数据结构的思考方向](#分析任何数据结构的思考方向)
+- [复杂度分析](#复杂度分析)
 
 <!-- vim-markdown-toc -->
 
@@ -22,3 +23,35 @@
    效率，内存占用影响。
 
 5. 可能的使用场景。
+
+
+### 复杂度分析
+
+  <img src="../resources/time-complexity.jpg">
+
+- 对数 O(logn)
+  - 一些分治算法，通常都是无限循环的
+
+  - 如果一段代码复杂度是O(logn)，循环执行n次，复杂度为O(nlogn)。例如，归并排序，快速排序
+
+  - 所有对数阶时间复杂度都可记为O(logn)，因为对数间可以互换，log3n = log32 * log2n
+
+- O(m+n), O(m\*n)
+  ``` C
+  int cal(int m, int n) {
+    int sum_1 = 0;
+    int i = 1;
+    for (; i < m; ++i) {
+      sum_1 = sum_1 + i;
+    }
+
+    int sum_2 = 0;
+    int j = 1;
+    for (; j < n; ++j) {
+      sum_2 = sum_2 + j;
+    }
+
+    return sum_1 + sum_2;
+  }
+  ```
+
