@@ -4,8 +4,13 @@
 - [Web 备忘录](#web-备忘录)
   - [业务状况分类](#业务状况分类)
   - [网络及前端基础：](#网络及前端基础)
-  - [后端技术体系：](#后端技术体系)
+- [后端技术体系：](#后端技术体系)
+  - [Web服务器(Tomcat，Nginx)、](#web服务器tomcatnginx)
   - [数据库](#数据库)
+  - [框架](#框架)
+  - [分布式、](#分布式)
+  - [虚拟化 docker，kubernates](#虚拟化-dockerkubernates)
+  - [安全](#安全)
 
 <!-- vim-markdown-toc -->
 
@@ -16,6 +21,7 @@
 
 
 #### 业务状况分类
+> 游戏、广告、媒体、社交、金融等
 
 服务端/后端  
 ├系统类型  
@@ -71,14 +77,15 @@
 - 前端基础（HTML/CSS/JS/ES6/Ajax/jQuery)
 
 - 框架
-  - Bootstrap
+  - CSS Bootstrap
+  - UI Vue React Angular
 
 ---
 
 
-#### 后端技术体系：
-- Web服务器(Tomcat，Nginx)、
+### 后端技术体系：
 
+#### Web服务器(Tomcat，Nginx)、
   - 浏览器请求解析、响应生成底层原理
 
   - 对底层接口的封装实现，Java中Servlet，Python中WSGI。
@@ -91,25 +98,6 @@
 
     - 监听器实现会话统计，实时状态
 
-- MVC框架，Java-Spring，Python-Django, flask, tornado
-  - 替代了jsp作为view的作用，用于展现与用户交互的前端界面。
-  - 集成后端Model持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口，处理真正的业务逻辑。
-  - 底层Controller还是基于Servlet，分发前端各种请求到对应的业务逻辑进行处理。
-
-  - 集成其他后端组件
-
-- redis缓存
-
-- 消息队列 RMQ，Kafka
-
-- 分布式、分布式文件系统、RPC、微服务
-
-- 虚拟化 docker，kubernates
-
-- 搜索引擎 elasticSearch
-
-- 安全
-
 
 #### 数据库
 - 分页
@@ -119,4 +107,37 @@
 - 常用demo
   - 查询：
     "select * from table order by id desc limit ?,?"
+
+- 全文检索 elasticSearch
+
+
+#### 框架
+
+- MVC框架，Java-Spring，Python-Django, flask, tornado
+  - 替代了jsp作为view的作用，用于展现与用户交互的前端界面。
+
+  - 集成后端Model持久层框架，数据库(mysql)及ORM框架，封装简化JDBC接口，处理真正的业务逻辑。
+
+  - 底层Controller还是基于Servlet，分发前端各种请求到对应的业务逻辑进行处理。
+
+  - 集成其他后端组件
+
+
+#### 分布式、
+- 分布式文件系统微服务
+
+- 消息通信
+  - 消息队列 RMQ，Kafka
+
+  - RPC、RMI、RestFul
+
+- 分布式缓存
+  - redis缓存
+
+
+#### 虚拟化 docker，kubernates
+
+
+#### 安全
+
 
