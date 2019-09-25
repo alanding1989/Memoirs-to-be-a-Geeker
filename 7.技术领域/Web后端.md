@@ -3,12 +3,11 @@
 
 - [Web 备忘录](#web-备忘录)
   - [业务状况分类](#业务状况分类)
-  - [网络及前端基础：](#网络及前端基础)
 - [后端技术体系：](#后端技术体系)
-  - [Web服务器(Tomcat，Nginx)、](#web服务器tomcatnginx)
-  - [数据库](#数据库)
+  - [Web服务器(Tomcat，Nginx)](#web服务器tomcatnginx)
   - [框架](#框架)
-  - [分布式、](#分布式)
+  - [数据库](#数据库)
+  - [分布式系统](#分布式系统)
   - [虚拟化 docker，kubernates](#虚拟化-dockerkubernates)
   - [安全](#安全)
 
@@ -53,39 +52,9 @@
 ---
 
 
-#### 网络及前端基础：
-- OSI模型，通信协议(HTTP/TCP/UDP)
-  - **浏览器请求到生成页面的过程**
-    1. 浏览器向服务器发送一个请求，请求包括：  
-        - 方法：GET还是POST，GET仅请求资源，POST会附带用户数据(表单等)。
-        - URL地址：其中包括域名与资源路径。
-        - 如果方法是POST，请求还包括一个Body，包含用户数据。
-
-        - 其他相关的Header。
-
-    2. 域名解析系统DNS对域名进行解析，获得服务器IP地址，请求TCP连接。
-
-    3. 服务器接收到客户端请求，进行三次握手，成功则建立连接，返回HTTP响应，响应包括。
-        - 响应码：如200表示成功，3xx表示重定向，4xx表示客户端发送请求有错误，5xx表示服务器处理错误。
-        - 响应类型：由 **Content-Type** 决定，表示响应类型是HTML文本、js脚本、图片、视频还是音乐。
-        - 其他相关的Header。
-
-        - Body，响应的内容。
-
-  - 会话、cookie
-
-- 前端基础（HTML/CSS/JS/ES6/Ajax/jQuery)
-
-- 框架
-  - CSS Bootstrap
-  - UI Vue React Angular
-
----
-
-
 ### 后端技术体系：
 
-#### Web服务器(Tomcat，Nginx)、
+#### Web服务器(Tomcat，Nginx)
   - 浏览器请求解析、响应生成底层原理
 
   - 对底层接口的封装实现，Java中Servlet，Python中WSGI。
@@ -99,20 +68,7 @@
     - 监听器实现会话统计，实时状态
 
 
-#### 数据库
-- 分页
-
-- 索引
-
-- 常用demo
-  - 查询：
-    "select * from table order by id desc limit ?,?"
-
-- 全文检索 elasticSearch
-
-
 #### 框架
-
 - MVC框架，Java-Spring，Python-Django, flask, tornado
   - 替代了jsp作为view的作用，用于展现与用户交互的前端界面。
 
@@ -123,16 +79,42 @@
   - 集成其他后端组件
 
 
-#### 分布式、
-- 分布式文件系统微服务
+#### 数据库
+- 分页
 
-- 消息通信
+- 索引
+
+- 常用demo
+  - 查询：
+    "select * from table order by id desc limit ?,?"
+
+- MySQL
+
+- Redis
+
+- 全文检索 elasticSearch
+
+
+#### 分布式系统
+- 分布式：一个业务分拆多个子业务，部署在不同的服务器上。
+
+- 集群：同一个业务，部署在多个服务器上。
+
+- 为什么要有分布式系统？
+  - 冗余，不要把鸡蛋放在一个篮子里。
+  - 可扩展性，横向水平扩展。
+
+- 数据通信
   - 消息队列 RMQ，Kafka
 
   - RPC、RMI、RestFul
 
 - 分布式缓存
   - redis缓存
+
+- 分布式文件系统
+
+- 微服务
 
 
 #### 虚拟化 docker，kubernates
