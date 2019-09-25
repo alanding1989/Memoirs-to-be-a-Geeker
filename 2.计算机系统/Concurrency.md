@@ -43,7 +43,7 @@
   > 流水线是采用分治思想把一条指令的执行过程分解成若干个细小的步骤，并由不同的单元完成，各个单元独立，并行执行。  
     要优化程序执行时间，就可以借鉴这种细化执行粒度，让每一级任务减少的思想。
 
-  <img src="../7.Resources/parallel-PipeLine.png">
+  <img src="../10.Resources/parallel-PipeLine.png">
 
 
 ### 2. 并发
@@ -379,7 +379,7 @@
 
     - 当某个条件满足，其他线程调用this.notify方法**唤醒等待的线程**，等待的线程将**重新获得this的锁**。  
 
-      <img src="../7.Resources/Java-multithread-wait-notify.jpg">
+      <img src="../10.Resources/Java-multithread-wait-notify.jpg">
 
   - **java.util.concurrent：** 包提供了比synchronized-wait语句快更高级别的API来实现多线程同步和协调。
 
@@ -391,5 +391,5 @@
       例如一个论坛帖子，回复不频繁，可看作写入。浏览频繁，可看作读取。
 
     - **Concurrent 集合：**  线程安全的集合类。
-      <img src="../7.Resources/Java-threadsafe-BlockConllection.png">
+      <img src="../10.Resources/Java-threadsafe-BlockConllection.png">
 
