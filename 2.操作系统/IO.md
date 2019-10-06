@@ -5,15 +5,17 @@
   - [参考资料](#参考资料)
   - [五种IO模型](#五种io模型)
   - [selcet，poll，epoll](#selcetpollepoll)
+  - [Java IO, NIO, AIO](#java-io-nio-aio)
+    - [NIO](#nio)
 
 <!-- vim-markdown-toc -->
 
 ---
 
 
-### Linux 系统 IO 模型
+## Linux 系统 IO 模型
 
-#### 参考资料
+### 参考资料
 - [Socket IO 详解](https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md)
 
 - [IO多路复用select，poll，epoll比较-1](https://www.cnblogs.com/aspirant/p/9166944.html)
@@ -21,7 +23,7 @@
 - [IO多路复用select，poll，epoll比较-2](https://www.jianshu.com/p/397449cadc9a)
 
 
-#### 五种IO模型
+### 五种IO模型
 
 - 阻塞IO： IO请求系统调用直到数据被拷贝到用户空间才返回，过程中当前进程被阻塞傻等。
 
@@ -37,9 +39,10 @@
   空间拷贝到用户空间。
 
 
-#### selcet，poll，epoll
-> I/O多路复用（multiplexing）的本质是通过一种机制(系统内核缓冲I/O数据)，让单个进程可以监视多个文件描述符，
-  一旦某个描述符就绪(一般是读就绪或写就绪)，能够通知相应进行相应的读写操作。
+### selcet，poll，epoll
+> I/O多路复用（multiplexing）的本质是通过系统内核缓冲I/O数据，让单个进程可以监视多个文件描述符，
+  一旦某个描述符就绪(一般是读就绪或写就绪)，能够通知相应进行相应的读写操作。  
+  内核缓冲区只有4KB。
 
 - 功能
   - poll只解决了select文件描述符最大数量的限制，并没有解决性能问题。epoll也没有描述符数量限制。
@@ -80,5 +83,9 @@
   - select  可移植性好。timeout精度为1ns，poll和epoll为1ms，因此select适用于高实时场景。
 
 
-内核缓冲区只有4KB。
+### Java IO, NIO, AIO
+
+#### NIO 
+Java NIO 基于 epoll LT 模式实现，有空轮询bug，会导致CPU飙升100%。
+
 
