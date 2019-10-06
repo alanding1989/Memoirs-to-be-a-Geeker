@@ -39,6 +39,7 @@
 
 ### 前端基础（HTML/CSS/JS/ES6/Ajax/jQuery)
 
+[Ajax和axios、fetch的区别](https://www.jianshu.com/p/8bc48f8fde75)
 
 ### 框架
 
