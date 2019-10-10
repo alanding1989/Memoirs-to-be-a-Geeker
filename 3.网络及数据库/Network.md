@@ -22,7 +22,7 @@
 
 
 #### HTTP
-  > **浏览器请求到生成页面的过程**
+- [**浏览器请求到生成页面的过程**](https://github.com/biaochenxuying/blog/issues/3)
 
   1. 浏览器向服务器发送一个请求，请求包括：
      - 方法：GET 还是 POST，GET 仅请求资源，POST 会附带用户数据(表单等)。
