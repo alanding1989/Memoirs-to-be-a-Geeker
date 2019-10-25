@@ -4,12 +4,14 @@
 - [Spring 的优势](#spring-的优势)
 - [Spring IOC](#spring-ioc)
 - [Spring AOP 简介](#spring-aop-简介)
-- [配置大体流程](#配置大体流程)
+- [Spring 注解](#spring-注解)
+  - [SpringMVC 参数传递常用注解,根据处理Request不同内容分为四类：](#springmvc-参数传递常用注解根据处理request不同内容分为四类)
+  - [配置大体流程](#配置大体流程)
 
 <!-- vim-markdown-toc -->
 
 
-#### Spring 的优势
+### Spring 的优势
 - 低侵入 / 低耦合 （降低组件之间的耦合度，实现软件各层之间的解耦）
 
 - 面向切面编程能帮助我们无耦合的实现日志记录，性能统计，安全控制。
@@ -21,7 +23,7 @@
 - 方便集成其他框架（如MyBatis、Hibernate）
 
 
-#### Spring IOC
+### Spring IOC
 > Invertion of controll 控制反转
 
 - 打个比方，原来做个红烧肉，我需要自己去买肉，准备佐料，自己加工，现在我只要外包给Spring，告诉它需要
@@ -44,7 +46,7 @@
   - 需要大量前期配置，SpringBoot已经解决。
 
 
-#### Spring AOP 简介
+### Spring AOP 简介
 > 面向切面编程是 Spring 最为重要的功能之一，在数据库事务中切面编程被广泛使用。
 
 - AOP 即 Aspect Oriented Program 面向切面编程。它把功能分为核心业务和周边功能。  
@@ -68,6 +70,37 @@
 
   - [静态代理和动态代理](../6.工程实践/设计模式/静态代理和动态代理.md)
   
+
+### Spring 注解
+- @Component表示这是一个需要Spring来管理的容器组件。
+  component-scan 默认扫描的注解类型是@Component，但是在@Component语义基础上细化的@Repository，@Service，
+  @Controller也同样会被扫描。
+  
+
+
+#### SpringMVC 参数传递常用注解,根据处理Request不同内容分为四类：
+
+- 处理requet uri 部分（指uri template中variable，不含queryString部分）的注解： @PathVariable;
+
+- 处理request header部分的注解： @RequestHeader, @CookieValue;
+  - @RequestHeader 注解，可以把Request请求header部分的值绑定到方法的参数上。
+  - @CookieValue 可以把Request header中关于cookie的值绑定到方法的参数上。
+
+- 处理request body部分的注解：@RequestParam, @RequestBody;
+  - @RequestParam 可以处理GET提交中queryString的值。
+  - 两个都可以用来处理POST提交Content-Type: 为 application/x-www-form-urlencoded编码的内容。
+  - @RequestParam 不能处理复杂类型application/json，application/xml，必须是@RequestBody。
+
+- 处理attribute类型是注解： @SessionAttributes, @ModelAttribute;
+  - @ModelAttribute 用在方法上，该Controller处理其他方法前会先调用被绑定的方法，相当于一个公共方法，
+    可写在一个BaseController中。为请求绑定需要从后台查询的model。
+
+  - @ModelAttribute 用在参数上，把之前绑定的相应名称的值注入到被注解的参数上。之前绑定的值来源于：
+    - @SessionAttributes 启用的attribute对象上。
+    - @ModelAttribute 用于方法上时指定的model对象。
+    - 假定@ModelAtribute 用在参数Pet上时，首先会查询 @SessionAttributes有无绑定的Pet对象，若没有则查询
+      @ModelAttribute方法层面上是否绑定了Pet对象，若没有则将URI template中的路径参数值按对应的名称绑定
+      到Pet对象的各属性上，从而构成一个Pet对象。
 
 
 #### 配置大体流程

@@ -54,7 +54,7 @@
             写`表级`互斥锁直到事务结束释放。
             
 
-  <img src=../9.Resources/database-isolationlevel.png>
+  <img src=../20.Resources/database-isolationlevel.png>
 
 
 #### 三大范式-解决如何设计数据库表的问题
@@ -86,10 +86,22 @@
 
 
 #### 常用demo
+
+  - 新建用户  
+  ```sql
+  GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP
+      ON TUTORIALS.*
+      TO 'zara'@'localhost'
+      IDENTIFIED BY 'zara123';
+  ```
+
   - 查询：
-    "select * from table order by id desc limit ?,?"
+  ```sql
+  select * from table order by id desc limit ?,?
+  ```
 
   - 建表：
+
   ```sql
   DROP DATABASE IF EXISTS mybatis;
   CREATE DATABASE mybatis DEFAULT CHARACTER SET utf8;
@@ -105,6 +117,7 @@
   INSERT INTO student VALUES(1,1,'我没有三颗心脏');
   INSERT INTO student VALUES(2,2,'我没有三颗心脏');
   INSERT INTO student VALUES(3,3,'我没有三颗心脏');
+
   ```
 
 

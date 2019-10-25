@@ -82,7 +82,7 @@
 - Java：  Java平台无关，默认Unicode编码，一个char类型永远占16bit，2个byte，String类型也是Unicode编码。  
 - Rust：  Rust平台无关，默认UTF-8编码，但一个char类型总是占32bit，4个byte。  
           要注意的是Rust里单个字符在String中占用的byte和单个字符存在占用的byte是不一样的。
-          如下图：<img src="../9.Resources/rust-char-and-String.png">
+          如下图：<img src="../20.Resources/rust-char-and-String.png">
 
 #### 移位操作：
 - 移位能实现整数除以或乘以2的n次方的效果。
