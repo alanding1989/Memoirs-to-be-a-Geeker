@@ -372,7 +372,7 @@ AtomicStampedReference.compareAndSet(expectedReference,newReference,oldStamp,new
 
 - 当某个条件满足，其他线程调用this.notify方法**唤醒等待的线程**，等待的线程将**重新获得this的锁**。  
 
-<img src="../../20.Resources/java/JUC-JVM/Java-multithread-wait-notify.jpg">
+<img src="../../0.Resources/java/JUC-JVM/Java-multithread-wait-notify.jpg">
 
 
 ### 条件变量：ReentrantLock 和 Condition
@@ -433,7 +433,7 @@ for (int i = 1; i <=6 ; i++) {
 - JMM是指Java**内存模型**，不是Java**内存布局**，不是所谓的栈、堆、方法区。
 
 - 每个Java线程都有自己的**工作内存**。操作数据，首先从主内存中读，得到一份拷贝，操作完毕后再回写到主内存。
-<img src="../../20.Resources/java/JUC-JVM/JMM.png">
+<img src="../../0.Resources/java/JUC-JVM/JMM.png">
 
 - JMM可能带来**可见性**、**原子性**和**有序性**问题。
 可见性是指某个线程对主内存内容的更改，应立刻通知到其它线程。
@@ -630,7 +630,7 @@ instance = memory;	 //3.设置引用地址
 
 ### Concurrent 集合类
   线程安全的集合类。
-  <img src="../../20.Resources/java/JUC-JVM/Java-threadsafe-BlockConllection.png">
+  <img src="../../0.Resources/java/JUC-JVM/Java-threadsafe-BlockConllection.png">
 
 
 ### List
@@ -705,7 +705,7 @@ public CopyOnWriteArraySet() {
 
 - **概念**：当阻塞队列为空时，获取（take）操作是阻塞的；当阻塞队列为满时，添加（put）操作是阻塞的。
 
-  <img src="../../20.Resources/java/JUC-JVM/BlockingQueue.png">
+  <img src="../../0.Resources/java/JUC-JVM/BlockingQueue.png">
 
 - **好处**：阻塞队列不用手动控制什么时候该被阻塞，什么时候该被唤醒，简化了操作。
 
@@ -867,11 +867,11 @@ public static ExecutorService newCachedThreadPool() {
 
 - **原理图**：上面银行的例子，实际上就是线程池的工作原理。
 
-![](../../20.Resources/java/JUC-JVM/threadPool.png)
+![](../../0.Resources/java/JUC-JVM/threadPool.png)
 
 - **流程图**：
 
-![](../../20.Resources/java/JUC-JVM/threadPoolProcedure.png)
+![](../../0.Resources/java/JUC-JVM/threadPoolProcedure.png)
 
 - 新任务到达
 - 如果正在运行的线程数小于`corePoolSize`，创建核心线程；大于等于`corePoolSize`，放入等待队列。

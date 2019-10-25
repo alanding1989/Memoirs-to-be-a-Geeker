@@ -58,7 +58,7 @@
 
 ### 后端技术
 
-  <img src=".../20.Resources/java/Java后端技术栈.jpg">
+  <img src=".../0.Resources/java/Java后端技术栈.jpg">
 
 
 #### [网络基础](../3.网络及数据库/Network.md)

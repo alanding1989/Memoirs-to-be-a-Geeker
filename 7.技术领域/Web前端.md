@@ -37,7 +37,7 @@
   前端VM层负责对后端M层数据进行转换处理，向上与V层强耦合，数据双向绑定，向下与后端M层通过接口请求进行数据交互。
   后端只需根据HTTP协议的方法不同编写Restful接口，单纯返回资源数据(JSON)。  
   VM层完全解耦V层和M层，使数据的展现与操作分离。  
-  <img src='../20.Resources/frontend/MVVM.png'>
+  <img src='../0.Resources/frontend/MVVM.png'>
 
 
 ### 前端基础（HTML/CSS/JS/ES6/Ajax/jQuery)
@@ -85,5 +85,5 @@
       异步就无法保证改变状态的先后次序了，感觉像竞争条件。  
       Actions是响应View层用户状态变化而调用一个或多个Mutation函数这个动作，可以为异步触发。
 
-  <img src='../20.Resources/frontend/双向绑定.png'>
+  <img src='../0.Resources/frontend/双向绑定.png'>
 
