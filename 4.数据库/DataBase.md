@@ -54,7 +54,7 @@
             写`表级`互斥锁直到事务结束释放。
             
 
-  <img src=../0.Resources/database-isolationlevel.png>
+  <img src=../0.Resources/database/database-isolationlevel.png>
 
 
 #### 三大范式-解决如何设计数据库表的问题

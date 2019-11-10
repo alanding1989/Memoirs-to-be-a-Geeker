@@ -74,7 +74,7 @@ Java中启动main函数就是启动了一个JVM进程，main函数所在的线�
 > 流水线是采用分治思想把一条指令的执行过程分解成若干个细小的步骤，并由不同的单元完成，各个单元独立，并行执行。  
   要优化程序执行时间，就可以借鉴这种细化执行粒度，让每一级任务减少的思想。
 
-  <img src="../0.Resources/parallel-PipeLine.png">
+  <img src="../0.Resources/os/parallel-PipeLine.png">
 
 
 ### 为什么要用并发

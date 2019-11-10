@@ -48,7 +48,7 @@
 
 # 1. JMM - Java Memory Model 和 几个关键字
 
-<img src="../../0.Resources/java/JUC-JVM/JMM.png">
+<img src="../../0.Resources/Java/JUC-JVM/JMM.png">
 
 - JMM是指Java**内存模型**。不是JVM **内存布局**，不是所谓的栈、堆、方法区。
 
@@ -313,7 +313,7 @@
 ## 2.1. Java中线程的生命周期与状态：
 - 任一时刻，线程只能处于以下六种状态中的一种状态。
 
-  <img src="../../0.Resources/java/JUC-JVM/Java线程的状态.png">
+  <img src="../../0.Resources/Java/JUC-JVM/Java线程的状态.png">
 
 - **线程生命周期：**
   - 线程创建之后将处于 NEW（新建）状态。
@@ -635,7 +635,7 @@
 
 - 当某个条件满足，其他线程调用this.notify方法**唤醒等待的线程**，等待的线程将**重新获得this的锁**。  
 
-  <img src="../../0.Resources/java/JUC-JVM/Java-multithread-wait-notify.jpg">
+  <img src="../../0.Resources/Java/JUC-JVM/Java-multithread-wait-notify.jpg">
 
 
 ### 3.2.2. 条件变量：ReentrantLock 和 Condition
@@ -704,7 +704,7 @@ for (int i = 1; i <=6 ; i++) {
 ## 5.2. Concurrent 集合类
 - 线程安全的集合类。
 
-  <img src="../../0.Resources/java/JUC-JVM/Java-threadsafe-BlockConllection.png">
+  <img src="../../0.Resources/Java/JUC-JVM/Java-threadsafe-BlockConllection.png">
 
 - 关于集合不安全类请看[ContainerNotSafeDemo](./demo-src/thread/ContainerNotSafeDemo.java)。
 
@@ -783,7 +783,7 @@ for (int i = 1; i <=6 ; i++) {
 ## 6.1. 基本概念
 - **概念**：当阻塞队列为空时，获取（take）操作是阻塞的。当阻塞队列为满时，添加（put）操作是阻塞的。
 
-  <img src="../../0.Resources/java/JUC-JVM/BlockingQueue.png">
+  <img src="../../0.Resources/Java/JUC-JVM/BlockingQueue.png">
 
 - **好处**：阻塞队列不用手动控制什么时候该被阻塞，什么时候该被唤醒，简化了操作。
 
@@ -985,11 +985,11 @@ for (int i = 1; i <=6 ; i++) {
 
 - #### 原理图
 
-![](../../0.Resources/java/JUC-JVM/threadPool.png)
+![](../../0.Resources/Java/JUC-JVM/threadPool.png)
 
 - #### 流程图：
 
-![](../../0.Resources/java/JUC-JVM/threadPoolProcedure.png)
+![](../../0.Resources/Java/JUC-JVM/threadPoolProcedure.png)
 
 - 新任务到达。
 
