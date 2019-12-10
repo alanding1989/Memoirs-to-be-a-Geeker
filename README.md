@@ -23,7 +23,7 @@
 
   一张**探索本质**的图片。
 
-   <img src="./0.Resources/本质的探索.jpg">
+  <img src="./0.Resources/本质的探索.jpg">
 
 
 ## 技术书籍阅读方法

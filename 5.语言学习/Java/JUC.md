@@ -377,6 +377,9 @@
 
 ## 2.4. ThreadLocal
 - 是什么
+  ThreadLocal 可以解决同一个线程当中数据共享的问题，但并不能解决线程安全的问题。
+  因为不同线程的ThreadLocal当中的变量可能指向同一块堆中的内存。
+  需要保证不同线程中变量是不同的实例就不会出现线程安全的问题。
 
 - 原理
 
@@ -699,6 +702,25 @@ for (int i = 1; i <=6 ; i++) {
 
 ## 5.1. 什么叫线程安全
 如果一个方法、数据结构或库在多线程环境中不会出现任何问题，则可以称为**线程安全**。  
+
+多例可以解决线程安全的问题，考虑下面的代码，这个main方法是可以多个线程进来的，但是里面却
+使用非线程安全的 StringBuilder，因为每个main 都会创建一个新的栈空间，每个s都是在堆上创建的
+不同的对象。
+
+```java
+public class TestThread {
+    public static void main(String[] args) throws Exception {
+          
+        StringBuilder s = new StringBuilder;
+
+        for (int i = 0; i < 100000; i++) {
+            s.append(i);
+        }
+
+        System.out.println(s);
+    }
+}
+```
 
 
 ## 5.2. Concurrent 集合类
